@@ -10,14 +10,12 @@ class Api::V1::JournalsController < ApplicationController
     end
 
     def create
-        # byebug
         journal = Journal.create(journal_params)
         all_journals = Journal.all
         render json: all_journals
     end
 
     def destroy 
-        # byebug
         journal = Journal.find_by(id: params[:id])
         journal.destroy
         all_journals = Journal.all

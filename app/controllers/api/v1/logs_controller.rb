@@ -10,14 +10,12 @@ class Api::V1::LogsController < ApplicationController
     end
 
     def create
-        # byebug
         logs = Log.create(log_params)
         all_logs = Log.all
         render json: all_logs, include: :mood
     end
 
     def destroy 
-        # byebug
         log = Log.find_by(id: params[:id])
         log.destroy
         all_logs = Log.all
