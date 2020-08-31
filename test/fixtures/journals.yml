@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prompt: MyString
+  resp1: MyString
+  resp2: MyString
+  resp3: MyString
+  user_id: 1
+
+two:
+  prompt: MyString
+  resp1: MyString
+  resp2: MyString
+  resp3: MyString
+  user_id: 1
