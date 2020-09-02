@@ -27,6 +27,14 @@ class Api::V1::LogsController < ApplicationController
         render json: log, include: :mood
     end
 
+    def update
+        # byebug
+        log = Log.find_by(id: params[:id])
+        log.update(log_params)
+        all_logs = Log.all
+        render json: all_logs, include: :mood
+    end
+
 private
 
     def log_params
