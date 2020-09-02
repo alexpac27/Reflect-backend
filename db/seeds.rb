@@ -36,16 +36,24 @@ prompt = [
     "What relationships are you thankful for today?",
     "Where did you find beauty today?"
 ]
-article1 = Article.create(title: "How to Meditate", content: "This is the body",image_url:"https://www.verywellmind.com/thmb/6I8juXTpLtcL4Qlt9iHVTeCrfOY=/500x350/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-938890492-becc3fc4757849bea672f148454943f9.jpg", category: "Meditation")
-article2 = Article.create(title: "Work/Life Balance", content: "Maintaing sanity at work by...",image_url:"https://www.verywellmind.com/thmb/6I8juXTpLtcL4Qlt9iHVTeCrfOY=/500x350/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-938890492-becc3fc4757849bea672f148454943f9.jpg", category: "Balance")
-article3 = Article.create(title: "The Art of Being Present", content: "Being present is often over looked but plays an essential role in our happiness.",image_url:"https://www.verywellmind.com/thmb/6I8juXTpLtcL4Qlt9iHVTeCrfOY=/500x350/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-938890492-becc3fc4757849bea672f148454943f9.jpg", category: "Fitness")
-article4 = Article.create(title: "Navigating Challenges at Work", content: "Try not to get too angry. Breathe your way out of a bad situation.",image_url:"https://www.verywellmind.com/thmb/6I8juXTpLtcL4Qlt9iHVTeCrfOY=/500x350/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-938890492-becc3fc4757849bea672f148454943f9.jpg", category: "Meditation")
-article5 = Article.create(title: "How to Practice Self Love", content: "Your body is a temple, take care of it.",image_url:"https://www.verywellmind.com/thmb/6I8juXTpLtcL4Qlt9iHVTeCrfOY=/500x350/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-938890492-becc3fc4757849bea672f148454943f9.jpg", category: "Self Care")
-article6 = Article.create(title: "Motivation in Unlikely Places", content: "Look at the struggle of a monarch butterfly.",image_url:"https://www.verywellmind.com/thmb/6I8juXTpLtcL4Qlt9iHVTeCrfOY=/500x350/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-938890492-becc3fc4757849bea672f148454943f9.jpg", category: "Mindfulness")
 
 alex = User.create(first_name:"Alex", last_name:"Ortiz",email:"alex@gmail.com",password:"pass123")
 emma = User.create(first_name:"Emma", last_name:"Wojtal",email:"emma@gmail.com",password:"pass123")
 jeremy = User.create(first_name:"Jeremy", last_name:"Hanson",email:"jeremy@gmail.com",password:"pass123")
+
+article1 = Article.create(title: "5 Minutes Before You Fall Asleep - Positive Affirmations", content: "Dr Wayne Dyer walks through the routine of positive affirmations you should be giving yourself daily.",image_url: "https://www.youtube.com/embed/Kvs-_22lwjA", category: "Self Care")
+article2 = Article.create(title: "Beginner's Guide to Meditation", content: "Increase positive energy, calmness and productivity throughout the day with a short morning routine.",image_url:"https://www.youtube.com/embed/KQOAVZew5l8", category: "Meditation")
+article3 = Article.create(title: "Work-Life Balance", content: "The idea of achieving work-life balance is a beautiful dream; it's also quite impossible, as we should realise without bitterness or frustration.",image_url:"https://www.youtube.com/embed/MPR3o6Hnf2g", category: "Balance")
+article4 = Article.create(title: "5-Minute Meditation You Can Do Anywhere", content: "In just 5 minutes you can reset your day in a positive way.",image_url:"https://www.youtube.com/embed/inpok4MKVLM", category: "Meditation")
+article5 = Article.create(title: "Mindfulness & Fitness with Paul Gagné", content: "This episode we talk about the intersection between mindfulness and fitness and how important mindfulness is for rest and regeneration.",image_url:"https://www.youtube.com/embed/qFvc2I3wkPE", category: "Fitness")
+article6 = Article.create(title: "30 seconds to mindfulness | TEDxNaperville", content: "Ben Tillerman explains why mindfulness is often overlooked in our busy schedules and how to incorporate it for a happier, healthier life.",image_url:"https://www.youtube.com/embed/ad7HqXEc2Sc", category: "Mindfulness")
+Article.create(title: "Why Mindfulness is a Super Power", content: "Practicing mindfulness is one of the single most powerful things you can do for your wellbeing.",image_url:"https://www.youtube.com/embed/w6T02g5hnT4" , category: "Mindfulness")
+Article.create(title: "30-Minute Restorative Yoga and Meditation", content: "Recovery is the most important part of your week, and with this 30-minute restorative yoga and meditation session, you are giving your body what it needs to grow. ",image_url:"https://www.youtube.com/embed/LI6RwT0ulDk", category: "Fitness")
+Article.create(title: "Self Care: What It Really Is", content: "Self care is what's needed for your well-being and should always leave you with more energy and feelings of revitalization.",image_url:"https://www.youtube.com/embed/dBn0ETS6XDk", category: "Self Care")
+Article.create(title: "How Do I Find Balance In My Life? | by Jay Shetty", content: "If you want to be happy, tie your life to a goal not a person.",image_url:"https://www.youtube.com/embed/4wiA6zfpP6w", category: "Balance")
+Article.create(title: "Meditation For Inner Peace - Yoga With Adriene", content: "Dive into meditation this Spring, go inward to focus on what feels good in mind and body.",image_url:"https://www.youtube.com/embed/d4S4twjeWTs", category: "Balance")
+
+Article.create(title: "Isha Kriya: A Guided Meditation", content: "Experience this powerful spiritual process in the comfort of your own home.",image_url:"https://www.youtube.com/embed/EwQkfoKxRvo", category: "Meditation")
 
 #Alex Favorites
 Favorite.create(user_id:1,article_id:1)
@@ -72,4 +80,6 @@ Log.create(user_id:1, mood_id:rand(1..12), tag1:"Work")
 Log.create(user_id:1, mood_id:rand(1..12), tag1:"Work", tag2: "Family")
 Log.create(user_id:1, mood_id:rand(1..12), tag1:"Friends", tag2: "Family")
 Log.create(user_id:1, mood_id:rand(1..12), tag1:"Health", tag2: "Relationships", tag3:"Social Life")
+
+
 
