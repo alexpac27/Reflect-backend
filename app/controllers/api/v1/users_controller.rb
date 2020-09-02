@@ -8,21 +8,21 @@ class Api::V1::UsersController < ApplicationController
     def index
         users = User.all
         if users.length > 0
-            render json: users
+            render json: users, include: :favorites
         else
             render json: {message: "No users yet!"}, status: :accepted
         end   
     end
 
     def create
-        user = User.create(user_params)
-        if user.valid?
-            # token = encode_token(user_id: user.id)
+        @user = User.create(user_params)
+        # if @user.valid?
+            # @token = encode_token(user_id: @user.id)
             render json: user
-            # render json: user: user, jwt: token, status: :created
-        else
-          render json: { error: 'failed to create user' }, status: :not_acceptable
-        end
+            # render json: {user: @user, jwt: @token}, status: :created
+        # else
+          # render json: { error: 'failed to create user' }, status: :not_acceptable
+        # end
       end
      
 
