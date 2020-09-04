@@ -1,14 +1,13 @@
 class Api::V1::UsersController < ApplicationController
     # skip_before_action :authorized, only: [:create]
 
-    # def profile
-    #     render json: user: current_user, status: :accepted
-    # end
+    
 
     def index
         users = User.all
         if users.length > 0
-            render json: users, include: :favorites
+            # render json: users
+            render json: users, include: [:favorites, :articles, :logs, :moods, :journals]
         else
             render json: {message: "No users yet!"}, status: :accepted
         end   
@@ -23,6 +22,11 @@ class Api::V1::UsersController < ApplicationController
         else
           render json: { error: 'failed to create user' }, status: :not_acceptable
         end
+      end
+
+      def show
+        user = User.find_by(id: params[:id])
+        render json: user, include: [:favorites, :articles, :logs, :moods, :journals]
       end
      
 
