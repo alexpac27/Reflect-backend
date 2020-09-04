@@ -1,7 +1,10 @@
 class Api::V1::UsersController < ApplicationController
-    # skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create]
 
-    
+    def profile
+      render json: {user: current_user}, include: [:favorites, :articles, :logs, :moods, :journals]
+      # render json: {user: current_user}, status: :accepted
+    end
 
     def index
         users = User.all
@@ -16,9 +19,9 @@ class Api::V1::UsersController < ApplicationController
     def create
         @user = User.create(user_params)
         if @user.valid?
-            # @token = encode_token(user_id: @user.id)
-            render json: @user
-            # render json: {user: @user, jwt: @token}, status: :created
+            @token = encode_token(user_id: @user.id)
+            # render json: @user
+            render json: {user: @user, jwt: @token}, include: [:favorites, :articles, :logs, :moods, :journals]
         else
           render json: { error: 'failed to create user' }, status: :not_acceptable
         end
