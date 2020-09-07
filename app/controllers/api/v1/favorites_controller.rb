@@ -13,8 +13,10 @@ class Api::V1::FavoritesController < ApplicationController
     def create
         # byebug
         fav = Favorite.create(favorite_params)
-        all_favs = Favorite.all
-        render json: all_favs, include: :article
+        user = User.find_by(id: params[:favorite][:user_id])
+        render json: {user: user}, include: [:favorites, :articles, :logs, :moods, :journals]
+        # all_favs = Favorite.all
+        # render json: all_favs, include: :article
     end
 
     def destroy 
