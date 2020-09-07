@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create, :show]
 
     def profile
       render json: {user: current_user}, include: [:favorites, :articles, :logs, :moods, :journals]
@@ -29,7 +29,9 @@ class Api::V1::UsersController < ApplicationController
 
       def show
         user = User.find_by(id: params[:id])
-        render json: user, include: [:favorites, :articles, :logs, :moods, :journals]
+        render json: {user: user}, include: [:favorites, :articles, :logs, :moods, :journals]
+
+        # render json: user, include: [:favorites, :articles, :logs, :moods, :journals]
       end
      
 

@@ -1,4 +1,5 @@
 class Api::V1::JournalsController < ApplicationController
+    skip_before_action :authorized
 
     def index
         journals = Journal.all

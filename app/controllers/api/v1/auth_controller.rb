@@ -20,5 +20,3 @@ class Api::V1::AuthController < ApplicationController
   end
 end
 
-
-# @user.as_json(:except => [:hashed_password])
