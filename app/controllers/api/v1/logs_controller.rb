@@ -15,18 +15,14 @@ class Api::V1::LogsController < ApplicationController
         user = User.find_by(id: params[:log][:user_id])
         all_logs = Log.all
         render json: all_logs, include: :mood
-        # render json: {user: user}, include: [:favorites, :articles, :logs, :moods, :journals]
 
     end
 
     def destroy 
-        # byebug
         log = Log.find_by(id: params[:id])
         log.destroy
         all_logs = Log.all
         render json: all_logs, include: :mood
-        # users = User.all
-        # render json: users, include: [:favorites, :articles, :logs, :moods, :journals]
     end 
 
     def show
@@ -35,15 +31,10 @@ class Api::V1::LogsController < ApplicationController
     end
 
     def update
-        # byebug
         log = Log.find_by(id: params[:id])
         log.update(log_params)
         all_logs = Log.all
         render json: all_logs, include: :mood
-        # users = User.all
-        # render json: users, include: [:favorites, :articles, :logs, :moods, :journals]
-        # all_logs = Log.all
-        # render json: all_logs, include: :mood
     end
 
 private
