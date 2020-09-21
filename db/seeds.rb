@@ -28,7 +28,8 @@ prompt = [
     "What's something you're looking forward to in the future?", 
     "Who made a positive impact in your life recently?",
     "What relationships are you thankful for today?",
-    "Where did you find beauty today?"
+    "Where did you find beauty today?",
+    "What are you most proud of today?"
 ]
 
 alex = User.create(first_name:"Alex", last_name:"Ortiz",email:"alex@gmail.com",password:"pass123")
